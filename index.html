@@ -1,0 +1,268 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui"><!-- viewport 后面加上 minimal-ui 在safri 体现效果 --><meta name="apple-mobile-web-app-capable" content="yes"><!-- 隐藏状态栏/设置状态栏颜色 --><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><!-- uc强制竖屏 --><meta name="screen-orientation" content="portrait"><!-- QQ强制竖屏 --><meta name="x5-orientation" content="portrait"><title>Angular CNode - 全球最专业的 Node.js 中文技术社区</title><link rel="icon" type="image/x-icon" href="favicon.ico"><base href="/angular-cnode/"><!-- <base href="/"> --><style>* {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    html {
+      background: #333;
+      background: no-repeat center center;
+      background-image: linear-gradient(rgba(255, 255, 255, 0) 60%, rgba(187, 2, 195, 0.34)), linear-gradient(70deg, rgba(22, 20, 187, 0.56) 32%, rgba(222, 100, 117, 0.58));
+      background-attachment: scroll;
+      background-size: cover;
+    }
+
+    .app-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 9999;
+      max-width: 640px;
+      margin: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      background: #8A2BE2;
+    }
+
+    .app-loading .box {
+      width: 400px;
+      height: 320px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .app-loading .box .line-spin-fade-loader {
+      position: relative;
+      width: 0;
+      margin: 0 auto;
+    }
+
+    .app-loading .box .line-spin-fade-loader div {
+      background-color: #fff;
+      width: 4px;
+      height: 35px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      margin: 2px;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      position: absolute;
+      width: 5px;
+      height: 15px;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(1) {
+      top: 20px;
+      left: 0;
+      -webkit-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(2) {
+      top: 13.63636px;
+      left: 13.63636px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(3) {
+      top: 0;
+      left: 20px;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(4) {
+      top: -13.63636px;
+      left: 13.63636px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(5) {
+      top: -20px;
+      left: 0;
+      -webkit-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(6) {
+      top: -13.63636px;
+      left: -13.63636px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(7) {
+      top: 0;
+      left: -20px;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+    }
+
+    .app-loading .box .line-spin-fade-loader div:nth-child(8) {
+      top: 13.63636px;
+      left: -13.63636px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+      -moz-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+      -o-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+      animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+    }
+
+    .app-loading h1 {
+      margin-top: 50px;
+      line-height: 70px;
+      font-size: 36px;
+    }
+
+    .app-loading p {
+      font-size: 18px;
+    }
+
+    .app-loading p span {
+      font-weight: 900;
+      color: #abf804;
+    }
+
+    .app-loading img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      width: 70%;
+    }
+
+    .app-loading .author {
+      margin-top: 50px;
+    }
+
+    .app-loading .author p a {
+      color: #abf804;
+    }
+
+    .app-loading-hide {
+      left: 120%;
+      bottom: 120%;
+      opacity: 0;
+    }
+
+    @-webkit-keyframes line-spin-fade-loader {
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes line-spin-fade-loader {
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes line-spin-fade-loader {
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes line-spin-fade-loader {
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }</style><link href="styles.fdf88d820c44138cd7d6.bundle.css" rel="stylesheet"/></head><body><div class="app-loading"><div class="box"><div class="line-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><h1>Angular CNode</h1><p>全球最专业的 <span>Node.js</span> 中文技术社区</p><img src="/angular-cnode/assets/images/cnodejs_light.svg" alt="cnodejs"><div class="author"><p>author: <a href="https://github.com/ShenBao" target="_blank">ShenBao</a></p></div></div></div><app-root></app-root><script type="text/javascript" src="inline.87881922e5f39eb65845.bundle.js"></script><script type="text/javascript" src="polyfills.5b59249e2a37b3779465.bundle.js"></script><script type="text/javascript" src="main.9dbdf8a3a1b607259d08.bundle.js"></script></body></html>
