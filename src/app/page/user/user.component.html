@@ -1,0 +1,40 @@
+<app-header [title]="title">
+  <div class="leftContainer">
+    <app-go-back></app-go-back>
+  </div>
+</app-header>
+
+<app-content>
+  <div *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!isExistence">
+    <app-data-null [msg]="'用户不存在'"></app-data-null>
+  </div>
+
+  <div *ngIf="!isLoading && isExistence">
+
+    <div class="user">
+      <div class="user-bg">
+      </div>
+      <div class="headimg">
+        <div class="pic">
+          <img v-if="user.avatar_url" [src]="data.avatar_url" alt="">
+        </div>
+      </div>
+      <div class="name"></div>
+      <div class="score">
+        <div class="score">积分：{{ data.score }}</div>
+        <div class="github">GitHub: {{ data.githubUsername }}</div>
+        <div class="create">注册于：{{ data.create_at | intervalTime }}</div>
+      </div>
+    </div>
+    <ul class="tab-nav">
+      <li [class.on]="index == 0" (click)="setChange(0)">回复</li>
+      <li [class.on]="index == 1" (click)="setChange(1)">主题</li>
+    </ul>
+    <app-topics-list [topicsList]="topicsList"></app-topics-list>
+  </div>
+
+</app-content>

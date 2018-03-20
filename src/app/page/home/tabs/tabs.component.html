@@ -1,0 +1,9 @@
+<div class="tabs">
+  <ul>
+    <li *ngFor="let item of tabs"
+        [class.active]="activeTab === item.tab"
+        (click)="toRouter(item.tab)">
+      <div class="name">{{ item.title }}</div>
+    </li>
+  </ul>
+</div>

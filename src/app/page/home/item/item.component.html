@@ -1,0 +1,39 @@
+<ul class="list">
+
+  <li *ngFor="let item of data">
+    <a [routerLink]="['/detail', item.id]">
+      <div class="top">
+        <div class="headimg">
+          <img [src]="item.author.avatar_url" alt="">
+        </div>
+        <div class="box">
+          <strong>{{ item.author.loginname }}</strong>
+          <div>
+            <time>{{ item.create_at | intervalTime }}</time>
+            <span class="tag" *ngIf="'good' == item.tab">#精华#</span>
+            <span class="tag" *ngIf="'share' == item.tab">#分享#</span>
+            <span class="tag" *ngIf="'ask' == item.tab">#问答#</span>
+            <span class="tag" *ngIf="'job' == item.tab">#招聘#</span>
+            <span class="tag" *ngIf="'dev' == item.tab">#测试#</span>
+          </div>
+        </div>
+      </div>
+      <div class="tit">{{ item.title }}</div>
+
+      <div class="expand">
+        <div class="item click">
+          <i class="iconfont icon-click"></i>
+          <div class="num">{{ item.visit_count }}</div>
+        </div>
+        <div class="item reply">
+          <i class="iconfont icon-comment"></i>
+          <div class="num">{{ item.reply_count }}</div>
+        </div>
+        <div class="item last-reply">
+          <time class="time">{{ item.last_reply_at | intervalTime }}</time>
+        </div>
+      </div>
+    </a>
+  </li>
+
+</ul>

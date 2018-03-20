@@ -1,0 +1,54 @@
+<div class="detail">
+
+  <!-- 楼主信息 start -->
+  <div class="user bottom-line">
+    <div class="headimg">
+      <a [routerLink]="['/user', data.author.loginname]">
+        <img class="pic" [src]="data.author.avatar_url" alt="">
+      </a>
+    </div>
+    <div class="bd">
+      <a [routerLink]="['/user',  data.author.loginname]">{{ data.author.loginname }}</a>
+      <time>{{ data.create_at | intervalTime }}</time>
+    </div>
+    <div class="num">#楼主</div>
+  </div>
+  <!-- 楼主信息 end -->
+  <!-- 主题信息 start -->
+  <div class="topic">
+    <h3>{{ data.title }}</h3>
+    <div class="amount">
+      <i class="iconfont icon-click"></i>
+      <span class="num">{{ data.visit_count }}</span>
+      <i class="iconfont icon-comment"></i>
+      <span class="num">{{ data.reply_count }}</span>
+    </div>
+    <div class="markdown-body" [innerHTML]="data.content"></div>
+  </div>
+  <!-- 主题信息 end -->
+  <div class="replies-count">
+    共(<em>{{ data.replies.length }}</em>)条回复
+  </div>
+
+  <ul>
+
+    <li class="bottom-line" *ngFor="let item of data.replies; let i=index">
+      <div class="user">
+        <div class="headimg">
+          <a [routerLink]="['/user', item.author.loginname]">
+            <img class="pic" [src]="item.author.avatar_url" alt="">
+          </a>
+        </div>
+        <div class="bd">
+          <a [routerLink]="['/user',  item.author.loginname]">{{ item.author.loginname }}</a>
+          <time>{{ item.create_at | intervalTime }}</time>
+        </div>
+        <div class="num">#{{ i+1 }}</div>
+        <br>
+      </div>
+      <div class="markdown-body comment-content" [innerHTML]="item.content">
+      </div>
+
+    </li>
+  </ul>
+</div>

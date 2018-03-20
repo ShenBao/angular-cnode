@@ -1,0 +1,24 @@
+<ul class="list" *ngIf="topicsList.length">
+
+  <li track-by="id" *ngFor="let item of topicsList">
+
+    <a [routerLink]="['/detail', item.id]">
+
+      <div class="user">
+        <div class="pic">
+          <img [src]="item.author.avatar_url" alt="">
+        </div>
+        <div class="line">
+          <span class="name">{{ item.author.loginname }}</span>
+          <time>{{ item.last_reply_at | intervalTime }}</time>
+        </div>
+      </div>
+      <div class="title">{{ item.title }}</div>
+
+    </a>
+
+  </li>
+
+</ul>
+
+<div class="list-null" *ngIf="!topicsList.length">没有记录</div>

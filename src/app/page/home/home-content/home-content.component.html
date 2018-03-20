@@ -1,0 +1,11 @@
+<app-tabs [activeTab]="activeTab">
+</app-tabs>
+
+<app-content [isFooter]="'true'">
+    <div *ngIf="isLoading">
+        <app-loading></app-loading>
+    </div>
+    <div *ngIf="!isLoading">
+        <app-item [data]="data"></app-item>
+    </div>
+</app-content>

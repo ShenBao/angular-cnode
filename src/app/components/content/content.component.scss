@@ -1,0 +1,15 @@
+.content {
+    overflow: auto;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    // overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.isfooter {
+    bottom: 50px;
+}
