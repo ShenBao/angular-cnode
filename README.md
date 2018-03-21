@@ -4,8 +4,6 @@
 
  感谢cnodejs社区提供的API，感谢[Angular](https://angular.cn/)
 
-
-
  github地址：
  [https://github.com/ShenBao/angular-cnode.git](https://github.com/ShenBao/angular-cnode.git)
 
@@ -16,7 +14,6 @@
  [https://ShenBao.github.io/angular-cnode](https://ShenBao.github.io/angular-cnode)
 
  二维码：
-
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
  <img src="./picture/qrcode.png" alt="code" width="150" height="150">
 
@@ -86,11 +83,9 @@
 - 页面跳转，不再执行此页面的ajax请求回调方法
 - 启动图
 
-
 ## 项目目录说明
 
 ```
-
 |-- e2e
 |-- node_modules
 |-- src                                                          // 源码目录
